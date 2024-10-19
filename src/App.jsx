@@ -4,6 +4,8 @@ import Home from './pages/Home'
 import Layout from './components/Layout'
 import CategoryPage from './pages/CategoryPage'
 import SearchResults from './pages/SearchResults'
+import AboutUs from './pages/AboutUs'
+import Contact from './pages/Contact'
 
 export default function App() {
   return (
@@ -13,6 +15,8 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path='/categories' element={<CategoryPage />} />
           <Route path='/search' element={<SearchResults />} />
+          <Route path='/about-us' element={<AboutUs />} />
+          <Route path='/contact' element={<Contact />} />
         </Route>
       </Routes>
     </BrowserRouter>
