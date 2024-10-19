@@ -1,9 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
+import CategoryFilter from '../components/CategoryFilter'
 
 export default function CategoryPage() {
+
+    const [selectedCategory, setSelectedCategory] = useState("general")
+
+    function onSelectCategory(category) {
+        setSelectedCategory(category)
+    }
     return (
-        <div>
-            The Category page goes here...
-        </div>
+        <section>
+            <CategoryFilter
+                selectedCategory={selectedCategory}
+                onSelectCategory={onSelectCategory}
+            />
+            <div>
+
+            </div>
+
+        </section>
     )
 }

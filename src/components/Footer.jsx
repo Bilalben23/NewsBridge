@@ -35,9 +35,9 @@ export default function Footer() {
                     </a>
                 </div>
             </div>
-
-            <div className="container pt-4 mx-auto mt-8 text-center border-t border-gray-700 ">
+            <div className="container pt-4 mx-auto mt-8 text-center border-t border-gray-700">
                 <p className="text-sm text-gray-500">&copy; {new Date().getFullYear()} NewsApp. All rights reserved.</p>
+                <p className="text-sm text-gray-500">Innovatively crafted by Bilal Benyoussef.</p>
             </div>
         </footer>
     );
