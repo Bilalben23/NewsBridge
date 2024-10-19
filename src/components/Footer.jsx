@@ -1,9 +1,10 @@
 import React from 'react'
 
 export default function Footer() {
+    const date = new Date()
     return (
-        <footer>
-            <p>The footer goes here</p>
+        <footer className='py-5 bg-base-300'>
+            <p>All right are reserved &copy; {date.getFullYear()}</p>
         </footer>
     )
 }
