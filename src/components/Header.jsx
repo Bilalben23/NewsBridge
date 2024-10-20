@@ -1,17 +1,17 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import { FaHome, FaInfoCircle, FaList, FaBell, FaPhoneAlt, FaSearch } from "react-icons/fa"
+import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import { FaHome, FaInfoCircle, FaList, FaBell, FaPhoneAlt, FaSearch, FaEllipsisV, FaMoon, FaGlobe, FaFlag, FaLeaf, FaWater, FaSun, FaPalette } from "react-icons/fa";
 import { Link as ScrollLink } from 'react-scroll';
 
+export default function Header({ handleOnClick }) {
 
-export default function Header() {
     return (
-        <header className='fixed top-0 z-50 flex items-center justify-between w-full py-1.5 px-6  shadow bg-base-300 border-b border-gray-900'>
-            <div className='w-1/5' >
+        <header className='fixed top-0 z-50 flex items-center justify-between w-full py-1.5 pl-6 pr-2 shadow bg-base-300 border-b border-gray-900'>
+            <div className='w-1/5'>
                 <h1 className='text-2xl font-bold text-transparent bg-gradient-to-tr from-primary to-secondary bg-clip-text'>NewsApp</h1>
             </div>
             <nav className='flex justify-center min-w-3/5'>
-                <ul className='space-x-1 menu menu-horizontal'>
+                <ul className='space-x-1 menu menu-horizontal *:font-semibold'>
                     <li>
                         <NavLink to="/" className='flex items-center gap-2'>
                             <FaHome /> Home
@@ -39,18 +39,53 @@ export default function Header() {
                     </li>
                 </ul>
             </nav>
-            <div className='flex justify-end w-1/5' >
+            <div className='relative flex items-center justify-end w-1/5 space-x-2'>
                 <ScrollLink
                     to="subscribe-form"
                     smooth={true}
                     duration={500}
                 >
-                    <button type="submit" className='btn-outline btn-secondary btn-sm btn rounded-3xl h-[50px] text-xs flex items-center gap-2'>
+                    <button type="submit" className='btn-outline btn-secondary btn-sm btn rounded-3xl h-[50px] text-xs flex items-center gap-2' onClick={handleOnClick}>
                         <FaBell size={16} className='hover:text-black' />
                         Subscribe
                     </button>
                 </ScrollLink>
-            </div >
-        </header >
-    )
+
+                <div className="dropdown dropdown-end">
+                    <button
+                        tabIndex={0}
+                        role="button"
+                        className="p-2 m-1 transition-all btn btn-square btn-sm btn-ghost hover:bg-gray-800 hover:text-white"
+                        aria-label="Options"
+                    >
+                        <FaEllipsisV />
+                    </button>
+                    <ul
+                        tabIndex={0}
+                        className="dropdown-content menu rounded-lg z-[1] mt-3.5 bg-base-100 w-52 p-2 shadow-lg border border-gray-700 text-sm transition-all duration-200 ease-in-out"
+                    >
+                        <li>
+                            <Link to="/choose-theme" className="flex items-center gap-2 py-3">
+                                <FaPalette className="text-blue-500" />
+                                Choose Theme
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/choose-language" className="flex items-center gap-2 py-3">
+                                <FaGlobe className="text-green-500" />
+                                Language
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/choose-country" className="flex items-center gap-2 py-3">
+                                <FaFlag className="text-red-500" />
+                                Country
+                            </Link>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </header>
+    );
 }

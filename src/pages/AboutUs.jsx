@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { FaUserFriends, FaBullhorn, FaClipboardList, FaStar, FaNewspaper, FaEnvelope } from 'react-icons/fa';
-import teamImage from '../../public/assets/team.png'; // Ensure you have an image in your assets folder
 import { Link } from 'react-router-dom';
 
 export default function AboutUs() {
@@ -19,9 +18,9 @@ export default function AboutUs() {
             <h1 className='mb-6 text-4xl font-bold text-center text-transparent bg-gradient-to-tr from-primary to-secondary bg-clip-text'>About Us</h1>
             <div className='w-[90%] mx-auto'>
                 <img
-                    src={teamImage}
+                    src='https://img.freepik.com/premium-vector/session-impact-unconscious-bias-decisionmaking-how-combat-it-through-diversity_216520-34918.jpg'
                     alt="Our Team"
-                    className="object-cover w-full mb-6 rounded-lg shadow-lg max-h-80 md:max-h-64"
+                    className="w-full mb-6 rounded-lg shadow-lg"
                 />
                 <p className='mb-8 text-lg text-center'>
                     Welcome to our platform! We are dedicated to providing you with the latest news and insights across various categories, including technology, health, finance, and more.
@@ -40,21 +39,21 @@ export default function AboutUs() {
 
             <div className="grid grid-cols-1 gap-6 mb-6 md:grid-cols-2 lg:grid-cols-3">
                 <div className="p-4 text-center transition-shadow duration-300 border rounded-lg shadow-md hover:shadow-lg hover:border-primary">
-                    <FaNewspaper className='mb-2 text-4xl text-blue-500' />
+                    <FaNewspaper className='mx-auto mb-2 text-4xl text-blue-500' />
                     <h3 className='text-xl font-semibold'>Trusted Sources</h3>
                     <p className='text-sm text-gray-600'>
                         We gather information from reputable publications, ensuring reliability and accuracy in our news coverage.
                     </p>
                 </div>
                 <div className="p-4 text-center transition-shadow duration-300 border rounded-lg shadow-md hover:shadow-lg hover:border-primary">
-                    <FaBullhorn className='mb-2 text-4xl text-blue-500' />
+                    <FaBullhorn className='mx-auto mb-2 text-4xl text-blue-500' />
                     <h3 className='text-xl font-semibold'>Real-Time Updates</h3>
                     <p className='text-sm text-gray-600'>
                         Stay updated with breaking news and insights as events unfold across the globe, all curated for you.
                     </p>
                 </div>
                 <div className="p-4 text-center transition-shadow duration-300 border rounded-lg shadow-md hover:shadow-lg hover:border-primary">
-                    <FaClipboardList className='mb-2 text-4xl text-blue-500' />
+                    <FaClipboardList className='mx-auto mb-2 text-4xl text-blue-500' />
                     <h3 className='text-xl font-semibold'>Diverse Perspectives</h3>
                     <p className='text-sm text-gray-600'>
                         Our curated content presents multiple viewpoints to give you a comprehensive understanding of the news.
@@ -65,21 +64,21 @@ export default function AboutUs() {
             <h2 className='mb-4 text-3xl font-semibold text-center text-transparent text-blue-500 bg-gradient-to-tr from-primary to-secondary bg-clip-text'>Meet the Team</h2>
             <div className="grid grid-cols-1 gap-6 mb-6 md:grid-cols-2 lg:grid-cols-3">
                 <div className="p-4 text-center transition-shadow duration-300 border rounded-lg shadow-md hover:shadow-lg hover:border-primary">
-                    <FaUserFriends className='mb-2 text-4xl text-blue-500' />
+                    <FaUserFriends className='mx-auto mb-2 text-4xl text-blue-500' />
                     <h3 className='text-xl font-semibold'>Our Experts</h3>
                     <p className='text-sm text-gray-600'>
                         A dedicated team of journalists and editors committed to integrity and insightful reporting.
                     </p>
                 </div>
                 <div className="p-4 text-center transition-shadow duration-300 border rounded-lg shadow-md hover:shadow-lg hover:border-primary">
-                    <FaStar className='mb-2 text-4xl text-blue-500' />
+                    <FaStar className='mx-auto mb-2 text-4xl text-blue-500' />
                     <h3 className='text-xl font-semibold'>Our Vision</h3>
                     <p className='text-sm text-gray-600'>
                         To become the go-to platform for accurate news and diverse perspectives in an ever-changing world.
                     </p>
                 </div>
                 <div className="p-4 text-center transition-shadow duration-300 border rounded-lg shadow-md hover:shadow-lg hover:border-primary">
-                    <FaStar className='mb-2 text-4xl text-blue-500' />
+                    <FaStar className='mx-auto mb-2 text-4xl text-blue-500' />
                     <h3 className='text-xl font-semibold'>Our Values</h3>
                     <p className='text-sm text-gray-600'>
                         Integrity, transparency, and accuracy guide our commitment to journalism.

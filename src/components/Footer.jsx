@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Element } from "react-scroll";
 import { useState } from 'react';
 
-export default function Footer() {
+export default function Footer({ inputRef }) {
     const [email, setEmail] = useState('');
 
     const handleSubscribe = (e) => {
@@ -14,7 +14,7 @@ export default function Footer() {
     };
 
     return (
-        <footer className="py-8 text-white border-t border-gray-800 bg-base-300">
+        <footer className="py-8 border-t border-gray-800 bg-base-300">
             <div className="container flex flex-col items-center justify-between mx-auto md:flex-row">
                 <div className="mb-6 md:mb-0">
                     <h2 className="text-2xl font-bold text-transparent bg-gradient-to-tr from-primary to-secondary bg-clip-text">NewsApp</h2>
@@ -70,7 +70,7 @@ export default function Footer() {
 
             <Element name="subscribe-form">
                 <div className="flex flex-col items-center mt-8">
-                    <h2 className="text-lg font-bold text-gray-300">Subscribe for Updates</h2>
+                    <h2 className="text-lg font-bold ">Subscribe for Updates</h2>
                     <form onSubmit={handleSubscribe} className="flex flex-col items-center mt-4 space-y-2 md:flex-row md:space-y-0 md:space-x-2">
                         <div className="flex items-center space-x-2 min-w-[320px] input input-bordered input-secondary">
                             <FaEnvelope className='text-secondary' />
@@ -80,6 +80,7 @@ export default function Footer() {
                                 onChange={(e) => setEmail(e.target.value)}
                                 placeholder="Enter your email..."
                                 className='w-full text-sm '
+                                ref={inputRef}
                                 required
                             />
                         </div>
@@ -94,10 +95,10 @@ export default function Footer() {
             </Element>
 
             <div className="container pt-4 mx-auto mt-8 text-center border-t border-gray-700">
-                <p className="mb-1 text-sm text-gray-300 transition duration-300 hover:text-gray-400">
+                <p className="mb-1 text-sm transition duration-300 hover:text-gray-500">
                     &copy; {new Date().getFullYear()} <span className="font-semibold text-primary">NewsApp</span>. All rights reserved.
                 </p>
-                <p className="text-sm text-gray-300">
+                <p className="text-sm">
                     Innovatively crafted by <span className="font-semibold text-secondary">Bilal Benyoussef</span>.
                 </p>
             </div>

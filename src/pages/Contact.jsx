@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaPaperPlane, FaUser, FaEnvelope, FaCommentDots, FaGlobe } from 'react-icons/fa';
 
 export default function Contact() {
@@ -44,10 +44,10 @@ export default function Contact() {
                 <div className='flex items-start gap-2 mb-4 textarea textarea-primary textarea-bordered'>
                     <FaCommentDots className='mt-1 text-primary' />
                     <textarea
-                        className="w-full bg-transparent outline-none"
+                        className="w-full bg-transparent outline-none max-h-[350px] resize-y"
                         id='message'
                         placeholder='Message...'
-                        rows='4'
+                        rows='5'
                         required></textarea>
                 </div>
                 <div className='flex items-center justify-between'>

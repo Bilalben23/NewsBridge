@@ -12,7 +12,7 @@ export default {
 
   daisyui: {
     themes: true,
-    darkTheme: "night"
+    darkTheme: "night",
   }
 }
 
