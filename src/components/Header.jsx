@@ -4,9 +4,9 @@ import { FaEnvelope } from "react-icons/fa"
 
 export default function Header() {
     return (
-        <header className='fixed top-0 flex items-center justify-between w-full py-2 pl-8 pr-6 shadow bg-base-300 z-50'>
+        <header className='fixed top-0 z-50 flex items-center justify-between w-full py-2 pl-8 pr-6 shadow bg-base-300'>
             <div className='w-1/5' >
-                <h1 className='text-2xl font-bold'>NewsApp</h1>
+                <h1 className='text-2xl font-bold text-transparent bg-gradient-to-tr from-primary to-secondary bg-clip-text'>NewsApp</h1>
             </div>
             <nav className='flex justify-center w-3/5'>
                 <ul className='menu menu-horizontal'>

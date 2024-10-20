@@ -9,7 +9,7 @@ export default function ArticleCard({ article }) {
     return (
         <article className='flex flex-col justify-between pb-3 overflow-hidden font-semibold rounded shadow-lg bg-base-300'>
             <div>
-                <div className='mb-2'>
+                <div className='mb-2 text-black bg-gray-300'>
                     <img src={article.urlToImage ?? "https://t4.ftcdn.net/jpg/05/17/53/57/360_F_517535712_q7f9QC9X6TQxWi6xYZZbMmw5cnLMr279.jpg"}
                         loading='lazy'
                         alt={article.title}

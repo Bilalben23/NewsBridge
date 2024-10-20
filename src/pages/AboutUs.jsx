@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 export default function AboutUs() {
     return (
         <section className='w-[95%] md:w-[90%] lg:w-[85%] mx-auto my-8'>
-            <h1 className='text-4xl font-bold text-center mb-6 text-blue-600'>About Us</h1>
+            <h1 className='text-4xl font-bold text-center mb-6  bg-gradient-to- from-primary to-secondary bg-clip-text text-transparent'>About Us</h1>
             <div className='w-[90%] mx-auto'>
                 <img
                     src={teamImage}
@@ -18,12 +18,12 @@ export default function AboutUs() {
                 </p>
             </div>
 
-            <h2 className='text-3xl font-semibold mb-4 text-blue-500 text-center'>Our Mission</h2>
+            <h2 className='text-3xl font-semibold mb-4 text-blue-500 text-center bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text'>Our Mission</h2>
             <p className='text-lg mb-6 text-center'>
                 Our mission is to empower individuals by delivering accurate and timely information that enriches their lives. We aggregate news from multiple trusted sources to ensure you receive a comprehensive view of current events.
             </p>
 
-            <h2 className='text-3xl font-semibold mb-4 text-blue-500 text-center'>Why We Aggregate</h2>
+            <h2 className='text-3xl font-semibold mb-4 text-blue-500 text-center bg-gradient-to-tr from-primary to-secondary bg-clip-text text-transparent'>Why We Aggregate</h2>
             <p className='text-lg mb-6 text-center'>
                 In today's fast-paced world, staying informed is crucial. By bringing together articles from various reputable sources, we aim to provide our readers with diverse perspectives and well-rounded insights.
             </p>
@@ -52,7 +52,7 @@ export default function AboutUs() {
                 </div>
             </div>
 
-            <h2 className='text-3xl font-semibold mb-4 text-blue-500 text-center'>Meet the Team</h2>
+            <h2 className='text-3xl font-semibold mb-4 text-blue-500 text-center bg-gradient-to-tr from-primary to-secondary bg-clip-text text-transparent'>Meet the Team</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
                 <div className="border rounded-lg p-4 shadow-md text-center hover:shadow-lg transition-shadow duration-300 hover:border-primary">
                     <FaUserFriends className='text-4xl text-blue-500 mb-2' />
@@ -77,7 +77,7 @@ export default function AboutUs() {
                 </div>
             </div>
 
-            <h2 className='text-3xl font-semibold mb-4 text-blue-500 text-center'>Join Our Community</h2>
+            <h2 className='text-3xl font-semibold mb-4 text-blue-500 text-center bg-gradient-to-tr from-primary to-secondary bg-clip-text text-transparent'>Join Our Community</h2>
             <p className='text-lg mb-6 text-center'>
                 We believe in the power of community. Share your thoughts, feedback, and ideas with us to help shape our platform.
             </p>

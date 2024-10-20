@@ -9,7 +9,7 @@ export default function Footer() {
         <footer className="py-8 text-white bg-base-300">
             <div className="container flex flex-col items-center justify-between mx-auto md:flex-row">
                 <div className="mb-6 md:mb-0">
-                    <h2 className="text-2xl font-bold">NewsApp</h2>
+                    <h2 className="text-2xl font-bold text-transparent bg-gradient-to-tr from-primary to-secondary bg-clip-text">NewsApp</h2>
                 </div>
 
                 <div className="flex mb-6 space-x-6 md:mb-0">
@@ -21,16 +21,40 @@ export default function Footer() {
                 </div>
 
                 <div className="flex space-x-4">
-                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="transition hover:text-gray-400">
+                    <a
+                        href="https://facebook.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="transition hover:text-gray-400 tooltip"
+                        data-tip="Facebook"
+                    >
                         <FaFacebookF />
                     </a>
-                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="transition hover:text-gray-400">
+                    <a
+                        href="https://twitter.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="transition hover:text-gray-400 tooltip"
+                        data-tip="Twitter"
+                    >
                         <FaTwitter />
                     </a>
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="transition hover:text-gray-400">
+                    <a
+                        href="https://instagram.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="transition hover:text-gray-400 tooltip"
+                        data-tip="Instagram"
+                    >
                         <FaInstagram />
                     </a>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="transition hover:text-gray-400">
+                    <a
+                        href="https://linkedin.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="transition hover:text-gray-400 tooltip"
+                        data-tip="Linkden"
+                    >
                         <FaLinkedin />
                     </a>
                 </div>
