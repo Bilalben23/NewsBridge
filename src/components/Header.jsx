@@ -11,7 +11,7 @@ export default function Header() {
                 <h1 className='text-2xl font-bold text-transparent bg-gradient-to-tr from-primary to-secondary bg-clip-text'>NewsApp</h1>
             </div>
             <nav className='flex justify-center min-w-3/5'>
-                <ul className='menu menu-horizontal'>
+                <ul className='space-x-1 menu menu-horizontal'>
                     <li>
                         <NavLink to="/" className='flex items-center gap-2'>
                             <FaHome /> Home

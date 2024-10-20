@@ -57,8 +57,8 @@ export default function Contact() {
                     </button>
                 </div>
             </form>
+
             <div className='p-8 mt-10 text-center text-white rounded-lg shadow-lg bg-gradient-to-tr from-base-300 to-blue-950'>
-                {/* Icon at the top of the card */}
                 <div className='flex justify-center mb-4'>
                     <FaGlobe size={40} className='text-white' />
                 </div>

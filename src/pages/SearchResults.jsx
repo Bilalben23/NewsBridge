@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import SearchInput from '../components/SearchInput';
 import { topics } from "../utils/Topics";
 import { generateRandomNumber } from '../utils/generateRandomNumber';
@@ -26,6 +26,13 @@ export default function SearchResults() {
             setSearch(searchTerm);
         }
     };
+
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: "auto"
+        })
+    }, [])
 
     if (error) {
         return <FetchError error={error} />;
