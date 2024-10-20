@@ -9,7 +9,7 @@ export default function CategoryPage() {
     const [showSkeletons, setShowSkeletons] = useState(true);
 
     // Fetch data based on the selected category
-    const endpoint = `top-headlines?category=${selectedCategory}&language=en`;
+    const endpoint = `top-headlines?category=${selectedCategory}&language=en&sortBy=publishedAt`;
     const { data, isLoading, error } = useFetch(endpoint, [selectedCategory]);
 
     // Manage skeleton display based on loading state
@@ -43,26 +43,25 @@ export default function CategoryPage() {
             <CategoryFilter selectedCategory={selectedCategory} onSelectCategory={onSelectCategory} />
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-                {/* Show Skeletons When Loading */}
                 {
                     showSkeletons && Array(14).fill().map((_, index) => (
                         <ArticleCardSkeleton key={index} />
                     ))
                 }
 
-                {/* Render Articles When Data is Loaded */}
                 {
-                    !isLoading && data?.articles?.length > 0 ? (
+                    !isLoading && data?.articles?.length > 0 && (
                         data.articles.map((article, index) => (
                             <ArticleCard key={index} article={article} />
                         ))
-                    ) : (
-                        // Show message if no articles found
-                        !isLoading && (
-                            <div className="col-span-full text-center text-gray-500">
-                                No articles found for this category.
-                            </div>
-                        )
+                    )
+                }
+
+                {
+                    !isLoading && data?.articles?.length === 0 && (
+                        <div className="col-span-full text-center text-gray-500">
+                            No articles found for this category.
+                        </div>
                     )
                 }
             </div>
