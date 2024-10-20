@@ -7,7 +7,7 @@ export default function ArticleCard({ article }) {
     const readableDate = DateToHumanReadable(article.publishedAt) ?? ""
 
     return (
-        <div className='flex flex-col justify-between pb-3 overflow-hidden font-semibold rounded shadow-lg bg-base-300'>
+        <article className='flex flex-col justify-between pb-3 overflow-hidden font-semibold rounded shadow-lg bg-base-300'>
             <div>
                 <div className='mb-2'>
                     <img src={article.urlToImage ?? "https://t4.ftcdn.net/jpg/05/17/53/57/360_F_517535712_q7f9QC9X6TQxWi6xYZZbMmw5cnLMr279.jpg"} alt={article.title} className='w-full aspect-[16/10]' />
@@ -29,6 +29,6 @@ export default function ArticleCard({ article }) {
                 </Link>
             </div>
 
-        </div>
+        </article>
     )
 }

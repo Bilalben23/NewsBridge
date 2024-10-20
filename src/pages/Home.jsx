@@ -4,7 +4,7 @@ import ArticleCard from "../components/ArticleCard";
 import ArticleCardSkeleton from '../skeletons/ArticleCardSkeleton';
 
 export default function Home() {
-    const endpoint = "top-headlines?country=us";
+    const endpoint = "top-headlines?country=us&language=en";
     const { data, isLoading, error } = useFetch(endpoint, []);
     const [showSkeletons, setShowSkeletons] = useState(true);
 
@@ -31,7 +31,10 @@ export default function Home() {
             }
             {
                 !isLoading && data && data?.articles?.length > 0
-                && data?.articles?.map((article, index) => <ArticleCard key={index} article={article} />)
+                    ? data?.articles?.map((article, index) => <ArticleCard key={index} article={article} />)
+                    : <div>
+                        <p>No breaking news found!</p>
+                    </div>
             }
         </section>
     );
