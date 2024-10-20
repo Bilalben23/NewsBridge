@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
 import { useFetch } from '../utils/api';
 import ArticleCard from "../components/ArticleCard";
 import ArticleCardSkeleton from '../skeletons/ArticleCardSkeleton';
@@ -15,6 +15,13 @@ export default function Home() {
             setShowSkeletons(false);
         }
     }, [isLoading]);
+
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'auto'
+        });
+    }, [])
 
     if (error) {
         return (

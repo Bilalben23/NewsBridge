@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
 import CategoryFilter from '../components/CategoryFilter';
 import { useFetch } from '../utils/api';
 import ArticleCard from '../components/ArticleCard';
@@ -21,6 +21,13 @@ export default function CategoryPage() {
     const onSelectCategory = (category) => {
         setSelectedCategory(category);
     };
+
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'auto'
+        });
+    }, [])
 
     if (error) {
         return (
