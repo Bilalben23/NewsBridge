@@ -2,6 +2,7 @@ import React, { useState, useEffect, useLayoutEffect } from 'react';
 import { useFetch } from '../utils/api';
 import ArticleCard from "../components/ArticleCard";
 import ArticleCardSkeleton from '../skeletons/ArticleCardSkeleton';
+import FetchError from '../components/FetchError';
 
 export default function Home() {
     const endpoint = "top-headlines?country=us&language=en";
@@ -24,11 +25,7 @@ export default function Home() {
     }, [])
 
     if (error) {
-        return (
-            <div className='p-5'>
-                <p className='text-xl font-semibold text-red-500'>{error}</p>
-            </div>
-        );
+        return <FetchError error={error} />;
     }
 
     return (

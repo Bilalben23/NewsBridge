@@ -1,6 +1,8 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { FaHome, FaInfoCircle, FaList, FaBell, FaPhoneAlt, FaSearch } from "react-icons/fa"
+import { Link as ScrollLink } from 'react-scroll';
+
 
 export default function Header() {
     return (
@@ -38,10 +40,16 @@ export default function Header() {
                 </ul>
             </nav>
             <div className='flex justify-end w-1/5' >
-                <button type="submit" className='btn-outline btn-secondary btn-sm btn rounded-3xl h-[50px] text-xs flex items-center gap-2'>
-                    <FaBell size={16} className='hover:text-black' />
-                    Subscribe
-                </button>
+                <ScrollLink
+                    to="subscribe-form"
+                    smooth={true}
+                    duration={500}
+                >
+                    <button type="submit" className='btn-outline btn-secondary btn-sm btn rounded-3xl h-[50px] text-xs flex items-center gap-2'>
+                        <FaBell size={16} className='hover:text-black' />
+                        Subscribe
+                    </button>
+                </ScrollLink>
             </div >
         </header >
     )

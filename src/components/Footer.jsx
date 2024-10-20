@@ -1,8 +1,7 @@
-// src/components/Footer.jsx
-
-import React from 'react';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { Element } from "react-scroll"
+
 
 export default function Footer() {
     return (
@@ -63,6 +62,9 @@ export default function Footer() {
                 <p className="text-sm text-gray-500">&copy; {new Date().getFullYear()} NewsApp. All rights reserved.</p>
                 <p className="text-sm text-gray-500">Innovatively crafted by Bilal Benyoussef.</p>
             </div>
+            <Element name="subscribe-form">
+                <h1>form</h1>
+            </Element>
         </footer>
     );
 }

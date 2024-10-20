@@ -5,6 +5,7 @@ import { generateRandomNumber } from '../utils/generateRandomNumber';
 import { useFetch } from '../utils/api';
 import ArticleCard from '../components/ArticleCard';
 import ArticleCardSkeleton from '../skeletons/ArticleCardSkeleton';
+import FetchError from '../components/FetchError';
 
 export default function SearchResults() {
     const randomIndex = generateRandomNumber(topics.length);
@@ -27,11 +28,7 @@ export default function SearchResults() {
     };
 
     if (error) {
-        return (
-            <div className='p-5 text-center'>
-                <h1 className='text-red-500 text-2xl'>{error}</h1>
-            </div>
-        );
+        return <FetchError error={error} />;
     }
 
     return (
@@ -41,7 +38,7 @@ export default function SearchResults() {
                 handleSubmit={handleSubmit}
                 handleChange={handleChange}
             />
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+            <div className="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2 lg:grid-cols-3">
                 {
                     isLoading && (
                         Array.from({ length: 14 }).map((_, index) => (
@@ -55,7 +52,7 @@ export default function SearchResults() {
                             <ArticleCard key={index} article={article} />
                         ))
                     ) : (
-                        <div className="col-span-full text-center text-gray-500">
+                        <div className="text-center text-gray-500 col-span-full">
                             No articles found for this search.
                         </div>
                     )

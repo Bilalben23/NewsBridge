@@ -3,6 +3,7 @@ import CategoryFilter from '../components/CategoryFilter';
 import { useFetch } from '../utils/api';
 import ArticleCard from '../components/ArticleCard';
 import ArticleCardSkeleton from '../skeletons/ArticleCardSkeleton';
+import FetchError from '../components/FetchError';
 
 export default function CategoryPage() {
     const [selectedCategory, setSelectedCategory] = useState('general');
@@ -30,11 +31,7 @@ export default function CategoryPage() {
     }, [])
 
     if (error) {
-        return (
-            <div className='p-5 text-center'>
-                <h1 className='text-red-500 text-2xl'>{error}</h1>
-            </div>
-        );
+        return <FetchError error={error} />;
     }
 
     return (
@@ -42,7 +39,7 @@ export default function CategoryPage() {
             {/* Category Filter Component */}
             <CategoryFilter selectedCategory={selectedCategory} onSelectCategory={onSelectCategory} />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+            <div className="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2 lg:grid-cols-3">
                 {
                     showSkeletons && Array(14).fill().map((_, index) => (
                         <ArticleCardSkeleton key={index} />
@@ -59,7 +56,7 @@ export default function CategoryPage() {
 
                 {
                     !isLoading && data?.articles?.length === 0 && (
-                        <div className="col-span-full text-center text-gray-500">
+                        <div className="text-center text-gray-500 col-span-full">
                             No articles found for this category.
                         </div>
                     )
