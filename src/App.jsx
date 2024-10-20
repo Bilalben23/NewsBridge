@@ -6,6 +6,7 @@ import CategoryPage from './pages/CategoryPage'
 import SearchResults from './pages/SearchResults'
 import AboutUs from './pages/AboutUs'
 import Contact from './pages/Contact'
+import NotFound from './pages/NotFound'
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
           <Route path='/search' element={<SearchResults />} />
           <Route path='/about-us' element={<AboutUs />} />
           <Route path='/contact' element={<Contact />} />
+          <Route path='*' element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

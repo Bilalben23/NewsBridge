@@ -25,7 +25,9 @@ export default function CategoryPage() {
                 onSelectCategory={onSelectCategory}
             />
             <div>
-
+                {
+                    error && <div></div>
+                }
             </div>
 
         </section>
