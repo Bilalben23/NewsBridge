@@ -1,12 +1,12 @@
 // src/components/Footer.jsx
 
 import React from 'react';
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa'; // Import FontAwesome icons
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 export default function Footer() {
     return (
-        <footer className="py-8 text-white bg-base-300">
+        <footer className="py-8 text-white border-t border-gray-800 bg-base-300">
             <div className="container flex flex-col items-center justify-between mx-auto md:flex-row">
                 <div className="mb-6 md:mb-0">
                     <h2 className="text-2xl font-bold text-transparent bg-gradient-to-tr from-primary to-secondary bg-clip-text">NewsApp</h2>
