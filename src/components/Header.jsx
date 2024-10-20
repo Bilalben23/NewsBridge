@@ -4,7 +4,7 @@ import { FaEnvelope } from "react-icons/fa"
 
 export default function Header() {
     return (
-        <header className='fixed top-0 flex items-center justify-between w-full py-2 pl-8 pr-6 shadow bg-base-300'>
+        <header className='fixed top-0 flex items-center justify-between w-full py-2 pl-8 pr-6 shadow bg-base-300 z-50'>
             <div className='w-1/5' >
                 <h1 className='text-2xl font-bold'>NewsApp</h1>
             </div>
