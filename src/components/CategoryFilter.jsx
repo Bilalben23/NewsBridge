@@ -4,7 +4,7 @@ import { CATEGORIES } from '../utils/Categories';
 export default function CategoryFilter({ selectedCategory, onSelectCategory }) {
 
     return (
-        <div className="w-[90%] flex flex-wrap justify-center gap-4 mx-auto my-5">
+        <div className="w-[90%] overflow-x-auto flex flex-wrap justify-center gap-4 mx-auto my-5">
             {
                 CATEGORIES.map((category) => (
                     <button
