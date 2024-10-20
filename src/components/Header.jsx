@@ -29,7 +29,7 @@ export default function Header() {
             </nav>
             <form className='flex items-stretch space-x-1.5' >
                 <div className='flex items-center py-5 space-x-2 input-secondary input-bordered input input-sm'>
-                    <FaEnvelope size={20} className='text-secondary' />
+                    <FaEnvelope size={17} className='text-secondary' />
                     <input type="email" name="email" placeholder='Email Address...' className='text-xs ' />
                 </div>
                 <button type="submit" className='btn-outline btn-secondary btn-sm btn !h-[50px] text-xs'>Subscribe</button>
