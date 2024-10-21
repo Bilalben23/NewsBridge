@@ -31,7 +31,7 @@ export default function Home() {
 
     return (
         <section>
-            <div className="flex items-center justify-center mb-5">
+            <div className="flex items-center justify-center mb-7">
                 <FaNewspaper className="mr-2 text-3xl text-primary" /> {/* Icon */}
                 <h1 className='text-3xl font-semibold text-transparent bg-gradient-to-tr from-primary to-secondary bg-clip-text'>
                     Breaking News

@@ -11,8 +11,22 @@ export default {
   ],
 
   daisyui: {
-    themes: true,
-    darkTheme: "night",
+    themes: [
+      "night",
+      "light",
+      "dark",
+      "corporate",
+      "synthwave",
+      "valentine",
+      "halloween",
+      "garden",
+      "forest",
+      "fantasy",
+      "dracula",
+      "autumn",
+      "business",
+      "coffee"
+    ],
   }
 }
 

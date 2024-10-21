@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function ChooseTheme() {
+export default function ChangeLanguage() {
     return (
         <div>
-            Choose theme
+            change language
         </div>
     )
 }

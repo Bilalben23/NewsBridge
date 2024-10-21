@@ -1,0 +1,16 @@
+export const daisyThemes = [
+    "night",
+    "light",
+    "dark",
+    "corporate",
+    "synthwave",
+    "valentine",
+    "halloween",
+    "garden",
+    "forest",
+    "fantasy",
+    "dracula",
+    "autumn",
+    "business",
+    "coffee",
+];

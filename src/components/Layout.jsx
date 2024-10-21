@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import Header from './Header'
 import { Outlet } from 'react-router-dom'
 import Footer from './Footer'
@@ -9,6 +9,17 @@ export default function Layout() {
     function handleOnClick() {
         inputRef.current.focus()
     }
+
+
+
+    useEffect(() => {
+        // Retrieve the theme from localStorage or use "night" as the default if none is set
+        const storedTheme = localStorage.getItem("news_app_theme");
+        const theme = storedTheme ? storedTheme : "night";
+
+        // Apply the theme to the HTML document element
+        document.documentElement.setAttribute('data-theme', theme);
+    }, []);
     return (
         <>
             <Header handleOnClick={handleOnClick} />
@@ -20,3 +31,4 @@ export default function Layout() {
         </>
     )
 }
+

@@ -7,7 +7,8 @@ import SearchResults from './pages/SearchResults'
 import AboutUs from './pages/AboutUs'
 import Contact from './pages/Contact'
 import NotFound from './pages/NotFound'
-import ChooseTheme from './pages/ChooseTheme'
+import ChangeTheme from './pages/ChangeTheme'
+import ChangeLanguage from './pages/ChangeLanguage'
 
 export default function App() {
   return (
@@ -19,7 +20,8 @@ export default function App() {
           <Route path='/search' element={<SearchResults />} />
           <Route path='/about-us' element={<AboutUs />} />
           <Route path='/contact' element={<Contact />} />
-          <Route path='/choose-theme' element={<ChooseTheme />} />
+          <Route path='/change-theme' element={<ChangeTheme />} />
+          <Route path='/change-language' element={<ChangeLanguage />} />
           <Route path='*' element={<NotFound />} />
         </Route>
       </Routes>
