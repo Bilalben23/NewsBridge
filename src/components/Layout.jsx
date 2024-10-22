@@ -6,11 +6,10 @@ import BackTopBtn from './BackTopBtn'
 
 export default function Layout() {
     const inputRef = useRef()
+
     function handleOnClick() {
         inputRef.current.focus()
     }
-
-
 
     useEffect(() => {
         // Retrieve the theme from localStorage or use "night" as the default if none is set
@@ -20,6 +19,8 @@ export default function Layout() {
         // Apply the theme to the HTML document element
         document.documentElement.setAttribute('data-theme', theme);
     }, []);
+
+
     return (
         <>
             <Header handleOnClick={handleOnClick} />

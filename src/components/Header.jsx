@@ -7,7 +7,7 @@ import DropdownMenu from './DropdownMenu';
 export default function Header({ handleOnClick }) {
 
     return (
-        <header className='fixed top-0 z-50 flex items-center justify-between w-full py-1.5 pl-6 pr-2 shadow bg-base-300 border-b border-gray-900'>
+        <header className='fixed top-0 z-40 flex items-center justify-between w-full py-1.5 pl-6 pr-2 shadow bg-base-300 border-b border-gray-900'>
             <div className='w-1/5'>
                 <h1 className='text-2xl font-bold text-transparent bg-gradient-to-tr from-primary to-secondary bg-clip-text'>NewsApp</h1>
             </div>
@@ -44,7 +44,7 @@ export default function Header({ handleOnClick }) {
                 <ScrollLink
                     to="subscribe-form"
                     smooth={true}
-                    duration={500}
+                    duration={1000}
                 >
                     <button type="submit" className='btn-outline btn-secondary btn-sm btn rounded-3xl h-[50px] text-xs flex items-center gap-2' onClick={handleOnClick}>
                         <FaBell size={16} className='hover:text-black' />

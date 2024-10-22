@@ -30,10 +30,10 @@ export default function BackTopBtn() {
     return (
         <>
             {!isHidden && (
-                <div className='fixed bottom-2 right-2 z-10'>
+                <div className='fixed z-10 bottom-2 right-2'>
                     <button
                         type="button"
-                        className='btn btn-circle btn-primary btn-sm btn-outline shadow-lg'
+                        className='shadow-lg btn btn-circle btn-primary btn-sm btn-outline'
                         onClick={handleBtnClick}
                     >
                         <FaChevronUp />

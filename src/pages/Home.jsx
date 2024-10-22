@@ -6,8 +6,9 @@ import FetchError from '../components/FetchError';
 import { FaNewspaper } from 'react-icons/fa';
 
 export default function Home() {
-    const endpoint = "top-headlines?country=us&language=en";
-    const { data, isLoading, error } = useFetch(endpoint, []);
+    const newsLanguage = localStorage.getItem("news_language");
+    const endpoint = `top-headlines?country=us&language=en`;
+    const { data, isLoading, error } = useFetch(endpoint, [newsLanguage]);
     const [showSkeletons, setShowSkeletons] = useState(true);
 
     useEffect(() => {
