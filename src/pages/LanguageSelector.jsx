@@ -75,12 +75,13 @@ export default function LanguageSelector({ setClickedBtn }) {
                                     type="button"
                                     onClick={() => handleLanguageClick(language.code)}
                                     className={`bg-base-100 btn btn-ghost btn-block justify-between h-[70px] ${language.code === chosenLanguage && "bg-base-300"}`}
+                                    disabled={!language.isAvailable}
                                 >
                                     <div className='flex items-center space-x-2.5'>
                                         {
                                             language.code === "all"
-                                                ? <FaGlobe className='text-2xl text-primary' />
-                                                : <Flag code={language.flagCode} className='w-6 h-6' />
+                                                ? <FaGlobe className={`text-2xl text-primary ${!language.isAvailable && "opacity-50"}`} />
+                                                : <Flag code={language.flagCode} className={`w-6 h-6 ${!language.isAvailable && "opacity-50"}`} />
                                         }
                                         <span className="font-semibold capitalize text-md">{language.name}</span>
                                     </div>

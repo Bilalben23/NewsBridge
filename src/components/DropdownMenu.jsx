@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { FaEllipsisV, FaFlag, FaGlobe, FaPalette } from 'react-icons/fa';
-import { NavLink } from 'react-router-dom';
+import { FaDatabase, FaEllipsisV, FaFlag, FaGlobe, FaPalette } from 'react-icons/fa';
 import LanguageSelector from '../pages/LanguageSelector';
 import ChangeTheme from '../pages/ChangeTheme';
+import CountrySelector from './CountrySelector';
 
 export default function DropdownMenu() {
     const [isMenuOpen, setIsMenuOpen] = useState(false); // Ensure menu is closed by default
@@ -35,26 +35,37 @@ export default function DropdownMenu() {
                     isMenuOpen && (
                         <ul
                             tabIndex={0}
-                            className="dropdown-content menu rounded-lg z-[1] mt-3.5 bg-base-100 w-52 p-2 shadow-lg border border-gray-700 text-sm transition-all duration-200 ease-in-out"
+                            className="dropdown-content menu rounded-lg z-[1] mt-3.5 bg-base-100 w-52 p-2 shadow-xl border border-gray-700 text-sm"
                         >
-                            <li onClick={() => handleOnClick("themes")}>
-                                <button type='button' className="flex items-center gap-2 font-semibold">
+                            <li onClick={() => handleOnClick("themes")} className='border-b border-gray-700'>
+                                <button type='button' className="flex items-center gap-2 py-3 mb-1 font-semibold">
                                     <FaPalette className="text-blue-500" />
-                                    Choose Theme
+                                    Select Theme
                                 </button>
                             </li>
-                            <li onClick={() => handleOnClick("languages")}>
-                                <button type='button' className="flex items-center gap-2 font-semibold">
+                            <li onClick={() => handleOnClick("languages")} className='border-b border-gray-700'>
+                                <button type='button' className="flex items-center gap-2 py-3 my-1 font-semibold">
                                     <FaGlobe className="text-green-500" />
-                                    News Language
+                                    Choose Language
                                 </button>
                             </li>
-                            <li onClick={() => handleOnClick("country")}>
-                                <button type='button' className="flex items-center gap-2 font-semibold">
+                            <li onClick={() => handleOnClick("countries")} className='border-b border-gray-700'>
+                                <button type='button' className="flex items-center gap-2 py-3 my-1 font-semibold">
                                     <FaFlag className="text-red-500" />
-                                    Country
+                                    Select Country
                                 </button>
                             </li>
+                            <li className='disabled' >
+                                <button
+                                    type='button'
+                                    className="flex items-center gap-2 py-3 mt-1 font-semibold"
+
+                                >
+                                    <FaDatabase className="text-purple-600" />
+                                    Select Source
+                                </button>
+                            </li>
+
                         </ul>
                     )
                 }
@@ -63,9 +74,12 @@ export default function DropdownMenu() {
                 clickedBtn === "themes" && <ChangeTheme setClickedBtn={setClickedBtn} />
             }
             {
-                // Show LanguageSelector only when "Language" is clicked
                 clickedBtn === "languages" && <LanguageSelector setClickedBtn={setClickedBtn} />
             }
+            {
+                clickedBtn === "countries" && <CountrySelector setClickedBtn={setClickedBtn} />
+            }
+
 
         </>
     );

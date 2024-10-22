@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import { FaHome, FaInfoCircle, FaList, FaBell, FaPhoneAlt, FaSearch, FaEllipsisV, FaMoon, FaGlobe, FaFlag, FaLeaf, FaWater, FaSun, FaPalette } from "react-icons/fa";
+import { NavLink } from 'react-router-dom';
+import { FaHome, FaInfoCircle, FaList, FaBell, FaPhoneAlt, FaSearch } from "react-icons/fa";
 import { Link as ScrollLink } from 'react-scroll';
 import DropdownMenu from './DropdownMenu';
 

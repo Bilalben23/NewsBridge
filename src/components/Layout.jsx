@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Header from './Header'
 import { Outlet } from 'react-router-dom'
 import Footer from './Footer'
@@ -6,6 +6,7 @@ import BackTopBtn from './BackTopBtn'
 
 export default function Layout() {
     const inputRef = useRef()
+
 
     function handleOnClick() {
         inputRef.current.focus()

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useLayoutEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useFetch } from '../utils/api';
 import ArticleCard from "../components/ArticleCard";
 import ArticleCardSkeleton from '../skeletons/ArticleCardSkeleton';
@@ -6,9 +6,8 @@ import FetchError from '../components/FetchError';
 import { FaNewspaper } from 'react-icons/fa';
 
 export default function Home() {
-    const newsLanguage = localStorage.getItem("news_language");
     const endpoint = `top-headlines?country=us&language=en`;
-    const { data, isLoading, error } = useFetch(endpoint, [newsLanguage]);
+    const { data, isLoading, error } = useFetch(endpoint);
     const [showSkeletons, setShowSkeletons] = useState(true);
 
     useEffect(() => {
@@ -43,17 +42,16 @@ export default function Home() {
                     showSkeletons && Array(14).fill().map((_, index) => <ArticleCardSkeleton key={index} />)
                 }
                 {
-                    !isLoading && data && data?.articles?.length > 0
-                        ? data?.articles?.map((article, index) => <ArticleCard key={index} article={article} />)
-                        : <div>
-                            <p>No breaking news found!</p>
-                        </div>
+                    !showSkeletons && !isLoading && data?.articles?.length === 0 && <div className="flex flex-col items-center justify-center mt-10 col-span-full">
+                        <p className="text-lg font-semibold text-gray-600">No breaking news found!</p>
+                        <FaNewspaper className="mt-4 text-5xl text-gray-400" />
+                    </div>
+                }
+                {
+                    !isLoading && data?.articles?.length > 0
+                    && data?.articles?.map((article, index) => <ArticleCard key={index} article={article} />)
                 }
             </div>
         </section>
     );
 }
-
-
-
-// https://newsapi.org/v2/top-headlines/sources?apiKey=60faad1b29e54d2398a084a52ddd2f2c => get resources:

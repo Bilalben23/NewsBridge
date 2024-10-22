@@ -47,18 +47,18 @@ export default function CategoryPage() {
                 }
 
                 {
-                    !isLoading && data?.articles?.length > 0 && (
-                        data.articles.map((article, index) => (
-                            <ArticleCard key={index} article={article} />
-                        ))
+                    !showSkeletons && !isLoading && data?.articles?.length === 0 && (
+                        <div className="text-center text-gray-500 col-span-full">
+                            No articles found for this category.
+                        </div>
                     )
                 }
 
                 {
-                    !isLoading && data?.articles?.length === 0 && (
-                        <div className="text-center text-gray-500 col-span-full">
-                            No articles found for this category.
-                        </div>
+                    !isLoading && data?.articles?.length > 0 && (
+                        data.articles.map((article, index) => (
+                            <ArticleCard key={index} article={article} />
+                        ))
                     )
                 }
             </div>
