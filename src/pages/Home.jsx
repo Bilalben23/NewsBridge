@@ -36,7 +36,8 @@ export default function Home() {
                 <h1 className='text-3xl font-semibold text-transparent bg-gradient-to-tr from-primary to-secondary bg-clip-text'>
                     Breaking News
                 </h1>
-            </div>            <div className='w-[90%] md:w-[80%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7'>
+            </div>
+            <div className='w-[90%] md:w-[80%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7'>
 
                 {
                     showSkeletons && Array(14).fill().map((_, index) => <ArticleCardSkeleton key={index} />)

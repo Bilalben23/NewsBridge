@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useLayoutEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import CategoryFilter from '../components/CategoryFilter';
 import { useFetch } from '../utils/api';
 import ArticleCard from '../components/ArticleCard';
@@ -6,7 +7,10 @@ import ArticleCardSkeleton from '../skeletons/ArticleCardSkeleton';
 import FetchError from '../components/FetchError';
 
 export default function CategoryPage() {
-    const [selectedCategory, setSelectedCategory] = useState('general');
+    const [searchParams, setSearchParams] = useSearchParams();
+    // Get the initial category from the URL or default to 'general'
+    const initialCategory = searchParams.get('category') || 'general';
+    const [selectedCategory, setSelectedCategory] = useState(initialCategory);
     const [showSkeletons, setShowSkeletons] = useState(true);
 
     // Fetch data based on the selected category
@@ -18,17 +22,29 @@ export default function CategoryPage() {
         setShowSkeletons(isLoading);
     }, [isLoading]);
 
+    // Update the URL when the selected category changes
+    useEffect(() => {
+        if (selectedCategory) {
+            setSearchParams({ category: selectedCategory });
+        }
+    }, [selectedCategory, setSearchParams]);
+
+    // Update state if the URL query parameter changes directly in the browser
+    useEffect(() => {
+        const category = searchParams.get('category');
+        if (category && category !== selectedCategory) {
+            setSelectedCategory(category);
+        }
+    }, [searchParams]);
+
     // Handle category selection
     const onSelectCategory = (category) => {
         setSelectedCategory(category);
     };
 
     useEffect(() => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'auto'
-        });
-    }, [])
+        window.scrollTo({ top: 0, behavior: 'auto' });
+    }, []);
 
     if (error) {
         return <FetchError error={error} />;
