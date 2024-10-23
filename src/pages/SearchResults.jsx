@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import SearchInput from '../components/SearchInput';
 import { topics } from "../utils/Topics";
 import { generateRandomNumber } from '../utils/generateRandomNumber';
@@ -9,10 +10,14 @@ import FetchError from '../components/FetchError';
 import { FaSearch } from 'react-icons/fa'; // Icon for search
 
 export default function SearchResults() {
-    const randomIndex = generateRandomNumber(topics.length);
-    const [searchTerm, setSearchTerm] = useState(topics[randomIndex]);
-    const [search, setSearch] = useState(searchTerm);
-    const [showSkeletons, setShowSkeletons] = useState(true); // State to control skeleton visibility
+    const [searchParams, setSearchParams] = useSearchParams();
+
+    // Get the initial search term from the query parameter or fallback to a random topic
+    const initialSearchTerm = searchParams.get('search') || topics[generateRandomNumber(topics.length)];
+
+    const [searchTerm, setSearchTerm] = useState(initialSearchTerm);
+    const [search, setSearch] = useState(initialSearchTerm);
+    const [showSkeletons, setShowSkeletons] = useState(true);
 
     // Triggering the API request only when the search term changes
     const endpoint = `everything?q="${search}"&language=en&sortBy=publishedAt&searchIn=title,description`;
@@ -22,6 +27,22 @@ export default function SearchResults() {
     useEffect(() => {
         setShowSkeletons(isLoading);
     }, [isLoading]);
+
+    // Update the URL when the search state changes
+    useEffect(() => {
+        if (search) {
+            setSearchParams({ search });
+        }
+    }, [search, setSearchParams]);
+
+    // Update state if the query parameter changes directly in the URL
+    useEffect(() => {
+        const query = searchParams.get('search');
+        if (query && query !== search) {
+            setSearch(query);
+            setSearchTerm(query);
+        }
+    }, [searchParams]);
 
     const handleChange = (e) => {
         setSearchTerm(e.target.value.trimStart());
