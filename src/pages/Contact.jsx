@@ -6,7 +6,7 @@ export default function Contact() {
     useEffect(() => {
         window.scrollTo({
             top: 0,
-            behavior: "auto",
+            behavior: "instant",
         })
     }, [])
 

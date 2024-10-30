@@ -8,6 +8,7 @@ import AboutUs from './pages/AboutUs'
 import Contact from './pages/Contact'
 import NotFound from './pages/NotFound'
 import LanguageSelector from './pages/LanguageSelector'
+import ArticleDetail from "./pages/ArticleDetail"
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
         <Route path='/' element={<Layout />}>
           <Route index element={<Home />} />
           <Route path='/categories' element={<CategoryPage />} />
+          <Route path="/articleDetails" element={<ArticleDetail />} />
           <Route path='/search' element={<SearchResults />} />
           <Route path='/about-us' element={<AboutUs />} />
           <Route path='/contact' element={<Contact />} />
@@ -26,3 +28,17 @@ export default function App() {
     </BrowserRouter>
   )
 }
+
+// async / sync 
+// promise
+
+
+let vr = "kcwrjvbfae d";
+console.log(vr);
+
+
+// promise : success, failed, pending
+
+// async 
+
+// sync code

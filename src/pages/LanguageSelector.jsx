@@ -22,7 +22,7 @@ export default function LanguageSelector({ setClickedBtn }) {
     useEffect(() => {
         window.scrollTo({
             top: 0,
-            behavior: "auto"
+            behavior: "instant"
         });
     }, []);
 

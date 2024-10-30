@@ -5,7 +5,7 @@ export default function FetchError({ error }) {
     useEffect(() => {
         window.scrollTo({
             top: 0,
-            behavior: "auto"
+            behavior: "instant"
         })
     }, [])
     return (

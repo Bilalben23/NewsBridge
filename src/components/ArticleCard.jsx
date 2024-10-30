@@ -29,7 +29,7 @@ export default function ArticleCard({ article }) {
                 </div>
             </div>
             <div className='px-3 mt-4'>
-                <Link to="" state={article} className='btn btn-primary btn-outline btn-sm'>
+                <Link to="/articleDetails" state={article} className='btn btn-primary btn-outline btn-sm'>
                     Read More
                 </Link>
             </div>

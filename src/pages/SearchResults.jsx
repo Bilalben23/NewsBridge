@@ -56,7 +56,7 @@ export default function SearchResults() {
     };
 
     useEffect(() => {
-        window.scrollTo({ top: 0, behavior: 'auto' });
+        window.scrollTo({ top: 0, behavior: 'instant' });
     }, []);
 
     if (error) {

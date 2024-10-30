@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaHome } from 'react-icons/fa';
 
 export default function NotFound() {
+    useEffect(() => {
+        scrollTo({
+            top: 0,
+            behavior: "instant"
+        })
+    })
     return (
         <div className="flex flex-col items-center justify-center p-6 py-10 text-center bg-base-200">
             <h1 className="mb-4 text-6xl font-bold text-primary animate-bounce">404</h1>
