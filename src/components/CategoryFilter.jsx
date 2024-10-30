@@ -10,7 +10,7 @@ export default function CategoryFilter({ selectedCategory, onSelectCategory }) {
                     <button
                         key={category.value}
                         onClick={() => onSelectCategory(category.value)}
-                        className={`btn  btn-primary rounded-3xl 
+                        className={`btn btn-sm md:btn-md btn-primary rounded-3xl 
                         ${selectedCategory === category.value ? 'btn-primary' : 'btn-outline'}`}
                     >
                         {<category.icon />}

@@ -25,7 +25,7 @@ export default function Layout() {
     return (
         <>
             <Header handleOnClick={handleOnClick} />
-            <main className='my-24'>
+            <main className='my-20 md:my-24'>
                 <Outlet />
             </main>
             <BackTopBtn />

@@ -1,17 +1,17 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { FaHome, FaInfoCircle, FaList, FaBell, FaPhoneAlt, FaSearch } from "react-icons/fa";
 import { Link as ScrollLink } from 'react-scroll';
 import DropdownMenu from './DropdownMenu';
+import SmallMenu from './SmallMenu';
 
 export default function Header({ handleOnClick }) {
 
     return (
-        <header className='fixed top-0 z-40 flex items-center justify-between w-full py-1.5 pl-6 pr-2 shadow bg-base-300 border-b border-gray-900'>
-            <div className='w-1/5'>
+        <header className='fixed top-0 z-40 flex items-center justify-between w-full py-2 md:py-1.5 pl-6 pr-2 shadow bg-base-300 border-b border-gray-900'>
+            <div className='flex-1 md:w-1/5'>
                 <h1 className='text-2xl font-bold text-transparent bg-gradient-to-tr from-primary to-secondary bg-clip-text'>NewsApp</h1>
             </div>
-            <nav className='flex justify-center min-w-3/5'>
+            <nav className='justify-center hidden md:flex min-w-3/5'>
                 <ul className='space-x-1 menu menu-horizontal *:font-semibold'>
                     <li>
                         <NavLink to="/" className='flex items-center gap-2'>
@@ -40,19 +40,22 @@ export default function Header({ handleOnClick }) {
                     </li>
                 </ul>
             </nav>
-            <div className='relative flex items-center justify-end w-1/5 space-x-2'>
+            <div className='relative items-center justify-end hidden w-1/5 space-x-2 md:flex'>
                 <ScrollLink
                     to="subscribe-form"
                     smooth={true}
                     duration={1000}
                 >
-                    <button type="submit" className='btn-outline btn-secondary btn-sm btn rounded-3xl h-[50px] text-xs flex items-center gap-2' onClick={handleOnClick}>
+                    <button type='button' className='btn-outline btn-secondary btn-sm btn rounded-3xl h-[50px] text-xs flex items-center gap-2' onClick={handleOnClick}>
                         <FaBell size={16} className='hover:text-black' />
                         Subscribe
                     </button>
                 </ScrollLink>
                 <DropdownMenu />
             </div>
+
+            {/* small screen menu */}
+            <SmallMenu handleOnClick={handleOnClick} />
         </header>
     );
 }

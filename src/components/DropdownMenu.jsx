@@ -29,7 +29,7 @@ export default function DropdownMenu() {
                     aria-label="Options"
                     onClick={toggleMenu}
                 >
-                    <FaEllipsisV />
+                    <FaEllipsisV size={20} />
                 </button>
                 {
                     isMenuOpen && (
