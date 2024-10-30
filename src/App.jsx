@@ -12,7 +12,7 @@ import ArticleDetail from "./pages/ArticleDetail"
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/NewsBridge/">
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<Home />} />
