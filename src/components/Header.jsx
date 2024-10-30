@@ -9,7 +9,7 @@ export default function Header({ handleOnClick }) {
     return (
         <header className='fixed top-0 z-40 flex items-center justify-between w-full py-2 md:py-1.5 pl-6 pr-2 shadow bg-base-300 border-b border-gray-900'>
             <div className='flex-1 md:w-1/5'>
-                <h1 className='text-2xl font-bold text-transparent bg-gradient-to-tr from-primary to-secondary bg-clip-text'>NewsApp</h1>
+                <h1 className='text-2xl font-bold text-transparent bg-gradient-to-tr from-primary to-secondary bg-clip-text'>NewsBridge</h1>
             </div>
             <nav className='justify-center hidden md:flex min-w-3/5'>
                 <ul className='space-x-1 menu menu-horizontal *:font-semibold'>

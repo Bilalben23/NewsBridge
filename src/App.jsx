@@ -28,17 +28,3 @@ export default function App() {
     </BrowserRouter>
   )
 }
-
-// async / sync 
-// promise
-
-
-let vr = "kcwrjvbfae d";
-console.log(vr);
-
-
-// promise : success, failed, pending
-
-// async 
-
-// sync code

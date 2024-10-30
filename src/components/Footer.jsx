@@ -17,7 +17,7 @@ export default function Footer({ inputRef }) {
         <footer className="py-8 border-t border-gray-800 bg-base-300">
             <div className="container flex flex-col items-center justify-between mx-auto md:flex-row">
                 <div className="mb-6 md:mb-0">
-                    <h2 className="text-2xl font-bold text-transparent bg-gradient-to-tr from-primary to-secondary bg-clip-text">NewsApp</h2>
+                    <h2 className="text-2xl font-bold text-transparent bg-gradient-to-tr from-primary to-secondary bg-clip-text">NewsBridge</h2>
                 </div>
 
                 <div className="flex flex-wrap justify-center mb-6 space-x-4 md:mb-0">

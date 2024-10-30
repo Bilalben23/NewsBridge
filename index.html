@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <!-- *Merriweather Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,13 +12,25 @@
     href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
     rel="stylesheet">
   <link rel="icon" href="public/assets/logo.icon">
-  <!--  -->
-  <title> NewsApp </title>
-  <!--  -->
-  <meta name="author" content="Bilal Benyoussef" />
-  <meta name="description" content="A simple news app">
 
-  <!--  -->
+  <!-- Page Title -->
+  <title>NewsBridge</title>
+
+  <!-- Meta Tags -->
+  <meta name="author" content="Bilal Benyoussef" />
+  <meta name="description" content="A simple news app" />
+  <meta name="keywords" content="news, articles, news aggregator, trending news" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="NewsBridge" />
+  <meta property="og:description" content="A simple news app" />
+  <meta property="og:image" content="public/assets/logo.icon" />
+  <meta property="og:url" content="https://yourwebsite.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="NewsBridge" />
+  <meta name="twitter:description" content="A simple news app" />
+  <meta name="twitter:image" content="public/assets/logo.icon" />
+
+  <!-- Theme Script -->
   <script>
     const theme = localStorage.getItem('news_app_theme') || 'night';
     document.documentElement.setAttribute('data-theme', theme);
