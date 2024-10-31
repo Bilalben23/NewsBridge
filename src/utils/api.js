@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 const BASE_URL = 'https://newsapi.org/v2';
-// const API_KEY = import.meta.env.VITE_API_KEY;
+const API_KEY = import.meta.env.VITE_API_KEY;
 
 export function useFetch(endpoint, deps = []) {
     const [data, setData] = useState({});
@@ -12,7 +12,7 @@ export function useFetch(endpoint, deps = []) {
         async function fetchData() {
             try {
                 setIsLoading(true);
-                const res = await fetch(`${BASE_URL}/${endpoint}&apiKey=6e606818953f4e05959dbcaf367cf1ea`);
+                const res = await fetch(`${BASE_URL}/${endpoint}&apiKey=${API_KEY}`);
                 const data = await res.json();
 
                 if (data.status !== "ok") {
