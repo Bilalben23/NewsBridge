@@ -137,4 +137,4 @@ To set up the platform locally, follow these steps:
 
 ### Visit the App
 
-- You can access the live version of NewsBridge by visiting [NewsBridge Live](http://your-website-link.com) . Check out the latest news, explore categories, and share articles with others!
+- You can access the live version of NewsBridge by visiting [NewsBridge Live](https://news-bridge-eight.vercel.app/) . Check out the latest news, explore categories, and share articles with others!
